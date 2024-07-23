@@ -1,0 +1,7 @@
+com\apicacion\repository\IPersonaRepository.class
+com\apicacion\model\Persona.class
+com\apicacion\service\IPersonaService.class
+com\apicacion\service\PersonaService.class
+com\apicacion\controller\PersonaController.class
+cors.class
+com\apicacion\PersonaApplication.class
