@@ -81,9 +81,10 @@ document.addEventListener("DOMContentLoaded", () => {
         confirmModal.style.display = "block";
     };
 
+    // Cambio: URL relativa para deleteConfirmed
     const deleteConfirmed = async () => {
-        try {
-            const response = await fetch(`http://localhost:8080/borrar/persona/${deletingPersonId}`, {
+        try {            
+            const response = await fetch(`/borrar/persona/${deletingPersonId}`, {
                 method: 'DELETE'
             });
             if (!response.ok) {
@@ -103,9 +104,10 @@ document.addEventListener("DOMContentLoaded", () => {
         personForm.reset();
     };
 
+    // Cambio: URL relativa para fetchPersons
     const fetchPersons = async () => {
-        try {
-            const response = await fetch('http://localhost:8080/persona/listarPersonas');
+        try {            
+            const response = await fetch('/persona/listarPersonas');
             if (!response.ok) {
                 throw new Error('Error al obtener la lista de personas');
             }
@@ -116,9 +118,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
+    // Cambio: URL relativa para createPerson
     const createPerson = async (personData) => {
-        try {
-            const response = await fetch('http://localhost:8080/persona/crear', {
+        try {            
+            const response = await fetch('/persona/crear', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -136,9 +139,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
+    // Cambio: URL relativa para updatePerson
     const updatePerson = async (id, personData) => {
-        try {
-            const response = await fetch('http://localhost:8080/editar/persona', {
+        try {           
+            const response = await fetch('/editar/persona', {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -154,9 +158,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
+    // Cambio: URL relativa para deletePerson
     const deletePerson = async (id) => {
-        try {
-            const response = await fetch(`http://localhost:8080/borrar/persona/${id}`, {
+        try {            
+            const response = await fetch(`/borrar/persona/${id}`, {
                 method: 'DELETE'
             });
             if (!response.ok) {
